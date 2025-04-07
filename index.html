@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Alice Teodósio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-fisio: #005f3c;
+      --branco: #ffffff;
+      --preto: #000000;
+      --dourado: #daa520;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body, html {
+      font-family: 'Playfair Display', serif;
+      background-color: var(--branco);
+      color: var(--preto);
+    }
+
+    header {
+      background-color: var(--verde-fisio);
+      color: var(--branco);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-area {
+      flex: 1;
+      text-align: center;
+    }
+
+    .logo-area img {
+      height: 60px;
+      width: auto;
+      border-radius: 50% / 40%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+
+    header h2 {
+      font-size: 1.5em;
+      flex: 1;
+      text-align: left;
+    }
+
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--branco);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 140px 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      color: var(--preto);
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--dourado);
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    .hero {
+      background-color: #e9f6f0;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .hero img {
+      width: 250px;
+      height: auto;
+    }
+
+    .hero-text h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+      color: var(--dourado);
+    }
+
+    .hero-text p {
+      font-size: 1.5em;
+    }
+
+    .section-content {
+      font-size: 1.4em;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+
+    .floating-img {
+      margin-top: 30px;
+      width: 300px;
+      max-width: 90%;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    ul {
+      font-size: 1.4em;
+      text-align: left;
+    }
+
+    footer {
+      background-color: var(--verde-fisio);
+      color: var(--branco);
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo-area {
+        margin: 10px 0;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text h1 {
+        font-size: 2.5em;
+      }
+      .hero-text p {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Alice Teodósio de Vasconcelos</h2>
+    <div class="logo-area">
+      <img src="imagens/logo.png" alt="Logo Oval">
+    </div>
+    <nav>
+      <a href="#hero">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <img src="imagens/foto-perfil.jpg" alt="Foto de Alice">
+    <div class="hero-text">
+      <h1>Estudante de Fisioterapia</h1>
+      <p id="introText"></p>
+      <img src="imagens/hero-extra.jpg" alt="Imagem destaque" class="floating-img">
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <div class="section-content" id="sobreText"></div>
+    <img src="imagens/sobre.jpg" alt="Imagem sobre mim" class="floating-img">
+  </section>
+
+  <section id="formacao">
+    <h2>Formação Acadêmica</h2>
+    <div class="section-content" id="formacaoText"></div>
+    <img src="imagens/formacao.jpg" alt="Imagem formação" class="floating-img">
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <div class="section-content" id="contatoText"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Desenvolvido por Alice Teodósio</p>
+  </footer>
+
+  <script>
+    const textosDigitados = {
+      introText: "Comprometida com o cuidado, a saúde e o bem-estar das pessoas",
+      sobreText: "Olá! Meu nome é Alice Teodósio de Vasconcelos, tenho 19 anos e sou estudante de Fisioterapia. Sou apaixonada por ajudar as pessoas a recuperarem sua saúde física e emocional através do movimento, da empatia e da ciência. Busco sempre me atualizar e participar de projetos que envolvam cuidado e humanização na área da saúde.",
+      formacaoText: "Graduanda em Fisioterapia - Universidade Maurício de Nassau (Início: 2024 - 3º Período)\nEstudante universitária comprometida e focada\nParticipante de grupos de estudos e eventos científicos na área da saúde",
+      contatoText: "Email: alice.fisio@email.com\nInstagram: @alicefisioterapia\nLinkedIn: linkedin.com/in/aliceteodosio"
+    };
+
+    function escreverTexto(id, texto, delay = 30) {
+      const el = document.getElementById(id);
+      let i = 0;
+      function digitar() {
+        if (i < texto.length) {
+          el.innerHTML += texto.charAt(i) === '\n' ? '<br>' : texto.charAt(i);
+          i++;
+          setTimeout(digitar, delay);
+        }
+      }
+      digitar();
+    }
+
+    window.onload = () => {
+      escreverTexto("introText", textosDigitados.introText);
+      setTimeout(() => escreverTexto("sobreText", textosDigitados.sobreText), 1000);
+      setTimeout(() => escreverTexto("formacaoText", textosDigitados.formacaoText), 2500);
+      setTimeout(() => escreverTexto("contatoText", textosDigitados.contatoText), 4500);
+    };
+  </script>
+</body>
+</html>
